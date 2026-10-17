@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Собирает из репозитория два файла для установки без терминала.
+"""Собирает из репозитория архив для установки без терминала.
 
-dist/text-formatter.zip        — скилл для раздела «Навыки» (Claude, ChatGPT): папка text-formatter/
-                                 с SKILL.md сверху, как ждёт загрузка навыков.
-dist/text-formatter-single.md  — весь форматёр одним файлом: для проекта в нейронке без навыков
-                                 (бесплатный ChatGPT, Go и подобные).
+dist/text-formatter.zip — один архив на все пути без терминала: раздел «Навыки» (Claude, ChatGPT)
+                          и файлы проекта в ChatGPT без навыков — проект сам открывает архив
+                          (проверено 17.10.2026 на бесплатном ChatGPT: отформатировал пример и
+                          прогнал скрипт проверки потерь прямо из архива).
 
-Зачем: руками поддерживается только репозиторий. Эти файлы собираются из него заново при каждой
-правке, поэтому расходиться с репозиторием им не на чем.
+Зачем: руками поддерживается только репозиторий. Архив собирается из него заново при каждой
+правке, поэтому расходиться с репозиторием ему не на чем.
 
 Запуск: python3 tools/build-dist.py  (из корня репозитория)
 """
@@ -21,19 +21,6 @@ NAME = "text-formatter"
 # Что входит в скилл. Инструкции установки и служебное для разработки в скилл не кладутся.
 SKILL_FILES = ["SKILL.md", "AGENTS.md", "steps/01-format.md", "tools/check-losses.py",
                "examples/example.md", "LICENSE"]
-
-SINGLE_HEAD = """# Форматёр — всё в одном файле
-
-> Этот файл — форматёр целиком: правила работы и шаг форматирования. Если ты нейронка и этот файл
-> лежит в проекте или прислан в чат — работай по нему, когда просят отформатировать текст,
-> расшифровку или документ. Ссылки на `steps/01-format.md` ниже означают раздел «Шаг
-> форматирования» в этом же файле. Скрипта проверки потерь здесь нет — сверку делай вручную по
-> разделу «Верификация» шага форматирования.
->
-> Источник: https://github.com/leonovs0808-star/text-formatter
-
-"""
-
 
 def skill_md_for_upload():
     """SKILL.md для загрузки в «Навыки»: в шапке только name и description.
@@ -58,16 +45,7 @@ def build_zip():
     return out
 
 
-def build_single():
-    agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-    step = (ROOT / "steps/01-format.md").read_text(encoding="utf-8")
-    text = SINGLE_HEAD + agents.rstrip() + "\n\n---\n\n# Шаг форматирования (steps/01-format.md)\n\n" + step
-    out = DIST / f"{NAME}-single.md"
-    out.write_text(text, encoding="utf-8")
-    return out
-
-
 if __name__ == "__main__":
     DIST.mkdir(exist_ok=True)
-    for path in (build_zip(), build_single()):
+    for path in (build_zip(),):
         print(f"{path.relative_to(ROOT)}  {path.stat().st_size} байт")
