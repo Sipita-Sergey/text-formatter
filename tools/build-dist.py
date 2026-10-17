@@ -21,7 +21,7 @@ NAME = "text-formatter"
 
 # Что входит в скилл. Инструкции установки и служебное для разработки в скилл не кладутся.
 SKILL_FILES = ["SKILL.md", "AGENTS.md", "steps/01-format.md", "tools/check-losses.py",
-               "examples/example.md", "LICENSE"]
+               "examples/example.md", "LICENSE", "VERSION"]
 
 SINGLE_HEAD = """# Форматёр — всё в одном файле
 
@@ -62,7 +62,8 @@ def build_zip():
 def build_single():
     agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
     step = (ROOT / "steps/01-format.md").read_text(encoding="utf-8")
-    text = SINGLE_HEAD + agents.rstrip() + "\n\n---\n\n# Шаг форматирования (steps/01-format.md)\n\n" + step
+    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    text = SINGLE_HEAD.replace("> Источник:", f"> Версия: {version}\n>\n> Источник:") + agents.rstrip() + "\n\n---\n\n# Шаг форматирования (steps/01-format.md)\n\n" + step
     out = DIST / f"{NAME}.md"
     out.write_text(text, encoding="utf-8")
     return out

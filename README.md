@@ -63,6 +63,23 @@ Codex). Тонкий `SKILL.md` внутри отправит агента чи�
 | `tools/check-losses.py` | Сверка исходника и результата по словам, нужен только Python |
 | `examples/example.md` | Короткий пример для первой проверки |
 
+## 🤝 Автор и поддержка
+
+Сделал **Сергей Сипита** — внедряю ИИ в маркетинг и собираю AI-офисы: команды цифровых
+сотрудников, которые ведут дела за предпринимателя. Форматёр — из моего рабочего офиса, пользуюсь им
+каждый день.
+
+- 🌐 Сайт — https://sipita.ru/
+- 📣 Telegram-канал — https://t.me/sipita08 — новые скиллы, разборы, вопросы
+- 🤖 Бот со скиллами — https://t.me/sipita_sergey_bot — забрать скиллы и материалы
+- ВКонтакте — https://vk.ru/sipita08
+- MAX — https://max.ru/join/ckqMy6PLqC7lMcFUblNhWghGbWQEWMobrDAj0thJUFk
+- TenChat — https://tenchat.ru/SipitaSergey
+- YouTube — https://www.youtube.com/@SipitaSergey
+- 🐞 Нашли ошибку или есть идея — [Issues](https://github.com/Sipita-Sergey/text-formatter/issues)
+
+Если пригодилось — поставь ⭐, так его найдут другие.
+
 ## Лицензия
 
 MIT.
