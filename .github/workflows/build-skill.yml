@@ -1,0 +1,26 @@
+# Собирает архив скилла при каждой правке в master и кладёт его в выпуск «latest».
+# Ссылка на скачивание постоянная: .../releases/download/latest/text-formatter.zip —
+# её дают инструкция для нейронки и README. Руками поддерживается только репозиторий.
+name: build-skill
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Собрать архив
+        run: python3 tools/build-dist.py
+      - name: Выложить в выпуск latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view latest >/dev/null 2>&1 || gh release create latest --title "Скилл одним архивом" --notes "Собирается автоматически из master при каждой правке. Установка — INSTALL-FOR-AI.md."
+          gh release upload latest dist/text-formatter.zip --clobber
