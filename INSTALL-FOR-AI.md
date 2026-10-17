@@ -38,7 +38,7 @@
 умеешь — дай ссылку. **Ответ без файла и без ссылки — провал установки:** ссылку пиши полным
 адресом, как в этой инструкции, чтобы она была кликабельной, — по клику браузер скачает сам.
 
-1. Скачать скилл одним архивом: https://github.com/leonovs0808-star/text-formatter/releases/download/latest/text-formatter.zip
+1. Скачать скилл одним архивом: https://github.com/Sipita-Sergey/text-formatter/releases/download/latest/text-formatter.zip
    Архив не распаковывать.
 2. **Claude:** «Настройки» → «Возможности» (Capabilities) → включить «Выполнение кода и создание
    файлов» (Code execution and file creation). Без этого навыки не работают. Затем «Настроить»
@@ -48,7 +48,7 @@
    целиком. Навыки в браузере, в приложении и на телефоне не синхронизируются: ставить там, где
    пользователь работает.
 3. Новый чат → прислать любой текст и написать «отформатируй». Для проверки — прислать пример
-   отсюда: https://raw.githubusercontent.com/leonovs0808-star/text-formatter/master/examples/example.md
+   отсюда: https://raw.githubusercontent.com/Sipita-Sergey/text-formatter/master/examples/example.md
 
 Не нашёл пользователь нужный пункт меню — не придумывай названия, попроси скриншот и веди по
 тому, что на нём видно. Раздела «Навыки» у него нет вовсе — переходи на «Путь В: проект».
@@ -58,7 +58,7 @@
 Форматёр кладётся в проект тем же архивом, что и для «Навыков». Каждый новый чат внутри проекта
 работает по нему: нейронка сама открывает архив и читает инструкции.
 
-1. Скачать форматёр одним архивом (тот же, что в «Пути Б»): https://github.com/leonovs0808-star/text-formatter/releases/download/latest/text-formatter.zip
+1. Скачать форматёр одним архивом (тот же, что в «Пути Б»): https://github.com/Sipita-Sergey/text-formatter/releases/download/latest/text-formatter.zip
    Архив не распаковывать.
 2. Создать проект: в ChatGPT — «Проекты» → «Новый проект». Название любое, например «Форматёр».
 3. В файлы (источники) проекта загрузить скачанный архив.
@@ -109,15 +109,15 @@ Cursor и другие агенты, когда открыты в этой па�
 
 ## Шаг 2. Скачай
 
-Репозиторий: https://github.com/leonovs0808-star/text-formatter
+Репозиторий: https://github.com/Sipita-Sergey/text-formatter
 
 Если есть `git`:
 
 ```bash
-git clone https://github.com/leonovs0808-star/text-formatter.git <папка из шага 1>
+git clone https://github.com/Sipita-Sergey/text-formatter.git <папка из шага 1>
 ```
 
-Нет `git` — скачай архив https://github.com/leonovs0808-star/text-formatter/archive/refs/heads/master.zip
+Нет `git` — скачай архив https://github.com/Sipita-Sergey/text-formatter/archive/refs/heads/master.zip
 и распакуй так, чтобы `AGENTS.md` лежал прямо внутри папки `text-formatter`, а не внутри
 вложенной `text-formatter-master`.
 

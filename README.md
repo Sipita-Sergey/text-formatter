@@ -14,7 +14,7 @@
 пропустил при записи; скрипт нет.
 
 Работает с `.md` и `.txt`, понимает метки «Спикер 1 / Спикер 2» из расшифровок
-[transcribe-batch](https://github.com/leonovs0808-star/transcribe-batch) и не склеивает реплики
+[transcribe-batch](https://github.com/Sipita-Sergey/transcribe-batch) и не склеивает реплики
 разных людей.
 
 Сделал [Сергей Сипита](https://t.me/SipitaSergey) — про ИИ в работе и нейроофисы пишу в канале
@@ -24,14 +24,14 @@
 
 Отправь в чат своей нейронке — Claude, ChatGPT, Codex, в браузере, в приложении или на телефоне:
 
-> Установи мне форматёр по этой инструкции: https://raw.githubusercontent.com/leonovs0808-star/text-formatter/master/INSTALL-FOR-AI.md
+> Установи мне форматёр по этой инструкции: https://raw.githubusercontent.com/Sipita-Sergey/text-formatter/master/INSTALL-FOR-AI.md
 
 Дальше она сама поймёт, где работает, и поведёт по нужному пути: в приложении с доступом к файлам
 поставит сама, в браузере даст архив и скажет, куда его загрузить — в «Навыки» или в проект.
 Ключей и регистраций не нужно: форматёр работает прямо в чате.
 
 Скилл одним архивом (для «Навыков» в Claude и ChatGPT или для файлов проекта):
-https://github.com/leonovs0808-star/text-formatter/releases/download/latest/text-formatter.zip
+https://github.com/Sipita-Sergey/text-formatter/releases/download/latest/text-formatter.zip
 
 ## Установка руками
 
@@ -39,7 +39,7 @@ https://github.com/leonovs0808-star/text-formatter/releases/download/latest/text
 когда открыты в этой папке. Поэтому не важно, какая у тебя нейронка.
 
 ```bash
-git clone https://github.com/leonovs0808-star/text-formatter.git ~/Documents/text-formatter
+git clone https://github.com/Sipita-Sergey/text-formatter.git ~/Documents/text-formatter
 ```
 
 Дальше открой эту папку в своей нейронке, положи в неё файл с текстом и напиши: «отформатируй
